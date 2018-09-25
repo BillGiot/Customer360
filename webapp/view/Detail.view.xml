@@ -93,35 +93,3 @@
 		</pages>
 	</App>
 </mvc:View>
-<!--  <Table items="{orderViewModel>/orders}">
-                        <headerToolbar>
-                            <Toolbar>
-                                <Title text="{i18n>Common.SalesOrders}"/>
-                                <ToolbarSpacer/>
-                            </Toolbar>
-                        </headerToolbar>
-                        <columns>
-                            <Column>
-                                <Text text="{i18n>Detail.Table.SalesOrderNumber}"/>
-                            </Column>
-                            <Column>
-                                <Text text="{i18n>Detail.Table.PONumber}"/>
-                            </Column>
-                            <Column>
-                                <Text text="{i18n>Detail.Table.DeliveryDate}"/>
-                            </Column>
-                            <Column>
-                                <Text text="{i18n>Detail.Table.Value}"/>
-                            </Column>
-                        </columns>
-                        <items>
-                            <ColumnListItem>
-                                <cells>
-                                    <ObjectIdentifier title="{orderViewModel>Id}"/>
-                                    <Text text="{orderViewModel>OrderNumber}"/>
-                                    <Text text="{path: 'orderViewModel>RequestedDeliveryDate', formatter: '.formatter.formatDate'}"/>
-                                    <Text text="{orderViewModel>NetValue}"/>
-                                </cells>
-                            </ColumnListItem>
-                        </items>
-                    </Table> -->
