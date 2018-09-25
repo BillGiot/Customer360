@@ -21,6 +21,14 @@
 					"odataVersion": "2.0",
 					"localUri": "localService/metadata.xml"
 				}
+			},
+			"ZV_ZVT18_CUSTM_BG_CDS": {
+				"uri": "/sap/opu/odata/sap/ZV_ZVT18_CUSTM_BG_CDS/",
+				"type": "OData",
+				"settings": {
+					"odataVersion": "2.0",
+					"localUri": "localService/ZV_ZVT18_CUSTM_BG_CDS/metadata.xml"
+				}
 			}
 		}
 	},
@@ -39,7 +47,10 @@
 			"tablet": true,
 			"phone": true
 		},
-		"supportedThemes": ["sap_hcb", "sap_belize"]
+		"supportedThemes": [
+			"sap_hcb",
+			"sap_belize"
+		]
 	},
 	"sap.ui5": {
 		"rootView": {
@@ -70,12 +81,25 @@
 				"type": "sap.ui.model.json.JSONModel",
 				"settings": {},
 				"preload": false
+			},
+			"": {
+				"uri": "/sap/opu/odata/sap/ZV_ZVT18_CUSTM_BG_CDS/",
+				"type": "sap.ui.model.odata.v2.ODataModel",
+				"settings": {
+					"defaultOperationMode": "Server",
+					"defaultBindingMode": "OneWay",
+					"defaultCountMode": "Request"
+				},
+				"dataSource": "ZV_ZVT18_CUSTM_BG_CDS",
+				"preload": true
 			}
 		},
 		"resources": {
-			"css": [{
-				"uri": "css/style.css"
-			}]
+			"css": [
+				{
+					"uri": "css/style.css"
+				}
+			]
 		},
 		"routing": {
 			"config": {
@@ -85,11 +109,13 @@
 				"viewPath": "com.delaware.bg.trac2018.view",
 				"controlId": "idAppControl"
 			},
-			"routes": [{
-				"name": "Master",
-				"pattern": "",
-				"target": "Master"
-			}],
+			"routes": [
+				{
+					"name": "Master",
+					"pattern": "",
+					"target": "Master"
+				}
+			],
 			"targets": {
 				"Master": {
 					"viewType": "XML",
@@ -97,7 +123,7 @@
 					"routerClass": "sap.f.routing.Router",
 					"async": true,
 					"viewPath": "com.delaware.bg.trac2018.view",
-					"controlId": "idAppControl", 
+					"controlId": "idAppControl",
 					"controlAggregation": "beginColumnPages"
 				},
 				"Detail": {
