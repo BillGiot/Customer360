@@ -2,9 +2,126 @@
 	xmlns:html="http://www.w3.org/1999/xhtml">
 	<App>
 		<pages>
-			<Page title="Title">
-				<content></content>
+			<Page title="{orders>customer}">
+				<content>
+					<ObjectHeader title="{customer>/Name}" icon="sap-icon://customer">
+						<attributes>
+							<ObjectAttribute text="{customer>/City}"/>
+							<ObjectAttribute text="{customer>/country}"/>
+							<ObjectAttribute text="{customer>/CustomerNumber}"/>
+						</attributes>
+					</ObjectHeader>
+					<Table id="idProductsTable" inset="false" items="{orders>/}">
+						<headerToolbar>
+							<Toolbar>
+								<content>
+									<Title text="{customer>/Name}"/>
+									<ToolbarSpacer/>
+									<!--	<ComboBox id="idPopinLayout"
+						placeholder="Popin layout options"
+						change="onPopinLayoutChanged">
+						<items>
+							<core:Item  text="Block"
+								key="Block"/>
+							<core:Item  text="Grid Large"
+								key="GridLarge"/>
+							<core:Item  text="Grid Small"
+								key="GridSmall"/>
+						</items>
+					</ComboBox>
+					<MultiComboBox id="idSticky"
+						placeholder="Sticky options"
+						selectionFinish="onSelectionFinish"
+						width="15%">
+						<items>
+							<core:Item  text="Column headers"
+								key="ColumnHeaders"/>
+							<core:Item  text="Header Toolbar"
+								key="HeaderToolbar"/>
+							<core:Item  text="Info Toolbar"
+								key="InfoToolbar"/>
+						</items>
+					</MultiComboBox>
+					<ToggleButton id="toggleInfoToolbar"
+						text="Hide/Show InfoToolbar"
+						press="onToggleInfoToolbar" /> -->
+								</content>
+							</Toolbar>
+						</headerToolbar>
+						<infoToolbar>
+							<Toolbar active="ture">
+								<Label text="Wide range of available products"/>
+							</Toolbar>
+						</infoToolbar>
+						<columns>
+							<!--  
+		"OrderNumber" : "229",
+        "Id" : "",
+        "RequestDeliveryDate" : "\/Date(1537228800000)\/",
+        "NetValue" : "0.00", -->
+							<Column width="12em">
+								<Text text="Sales Order Number"/>
+							</Column>
+							<Column>
+								<Text text="Purchase Order Number"/>
+							</Column>
+							<Column>
+								<Text text="Delivery Date"/>
+							</Column>
+							<Column>
+								<Text text="Value"/>
+							</Column>
+						</columns>
+						<items>
+							<ColumnListItem>
+								<cells>
+									<Text text="{orders>OrderNumber}"/>
+									<Text text="{orders>Id}"/>
+									<Text text="{ path: 'orders>RequestDeliveryDate', formatter: '.formatter.formatDate'}"/>
+									<Text text="{orders>NetValue}"/>
+									<!--<ObjectNumber number="{WeightMeasure}" unit="{WeightUnit}"
+										state="{ parts: [ {path: 'WeightMeasure'}, {path: 'WeightUnit'} ], formatter: 'sap.m.sample.Table.Formatter.weightState' }"/>
+									<ObjectNumber
+										number="{ parts:[{path:'Price'},{path:'CurrencyCode'}], type: 'sap.ui.model.type.Currency', formatOptions: {showMeasure: false} }"
+										unit="{CurrencyCode}"/> -->
+								</cells>
+							</ColumnListItem>
+						</items>
+					</Table>
+				</content>
 			</Page>
 		</pages>
 	</App>
 </mvc:View>
+<!--  <Table items="{orderViewModel>/orders}">
+                        <headerToolbar>
+                            <Toolbar>
+                                <Title text="{i18n>Common.SalesOrders}"/>
+                                <ToolbarSpacer/>
+                            </Toolbar>
+                        </headerToolbar>
+                        <columns>
+                            <Column>
+                                <Text text="{i18n>Detail.Table.SalesOrderNumber}"/>
+                            </Column>
+                            <Column>
+                                <Text text="{i18n>Detail.Table.PONumber}"/>
+                            </Column>
+                            <Column>
+                                <Text text="{i18n>Detail.Table.DeliveryDate}"/>
+                            </Column>
+                            <Column>
+                                <Text text="{i18n>Detail.Table.Value}"/>
+                            </Column>
+                        </columns>
+                        <items>
+                            <ColumnListItem>
+                                <cells>
+                                    <ObjectIdentifier title="{orderViewModel>Id}"/>
+                                    <Text text="{orderViewModel>OrderNumber}"/>
+                                    <Text text="{path: 'orderViewModel>RequestedDeliveryDate', formatter: '.formatter.formatDate'}"/>
+                                    <Text text="{orderViewModel>NetValue}"/>
+                                </cells>
+                            </ColumnListItem>
+                        </items>
+                    </Table> -->
